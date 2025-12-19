@@ -41,6 +41,7 @@ const staticProducts = [
   },
 ];
 
+
 export default function CollectionsPage() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
@@ -186,17 +187,6 @@ const addToCart = async (product) => {
   }
 };
 
-
-
-
-  // const removeFromCart = (product) => {
-  //   const updatedCart = cart
-  //     .map((item) =>
-  //       item.productId === product.productId ? { ...item, quantity: item.quantity - 1 } : item
-  //     )
-  //     .filter((item) => item.quantity > 0);
-  //   setCart(updatedCart);
-  // };
 const removeFromCart = async (product) => {
   try {
     const response = await fetch(`https://api.mypearlcraft.com/api/v20/cart/remove-product/${product._id}`, {
@@ -336,30 +326,39 @@ const removeFromCart = async (product) => {
       </div>
 
       {/* Product Modal */}
-      {showModal && selectedProduct && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-          <div className="bg-white max-w-lg w-full p-6 rounded-xl relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-            >
-              &times;
-            </button>
-            <Image
-              src={selectedProduct.image}
-              alt={selectedProduct.name}
-              width={500}
-              height={400}
-              className="w-full h-auto object-cover rounded"
-            />
-            <h3 className="mt-4 text-xl font-bold text-pink-700">{selectedProduct.name}</h3>
-            <p className="text-gray-600 mt-2">{selectedProduct.description}</p>
-            <p className="font-bold text-pink-700 mt-2">
-              ₹{selectedProduct.price - (selectedProduct.price * (selectedProduct.discount || 0)) / 100}
-            </p>
-          </div>
-        </div>
-      )}
+     {showModal && selectedProduct && (
+  <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+    <div className="bg-white max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 rounded-xl relative">
+      
+      {/* Close Button */}
+      <button
+        onClick={closeModal}
+        className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-2xl font-bold z-50"
+      >
+        &times;
+      </button>
+      
+      {/* Product Image */}
+      <div className="w-full">
+        <Image
+          src={selectedProduct.image}
+          alt={selectedProduct.name}
+          width={500}
+          height={400}
+          className="w-full h-auto object-cover rounded"
+        />
+      </div>
+      
+      {/* Product Details */}
+      <h3 className="mt-4 text-xl font-bold text-pink-700">{selectedProduct.name}</h3>
+      <p className="text-gray-600 mt-2">{selectedProduct.description}</p>
+      <p className="font-bold text-pink-700 mt-2">
+        ₹{selectedProduct.price - (selectedProduct.price * (selectedProduct.discount || 0)) / 100}
+      </p>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
