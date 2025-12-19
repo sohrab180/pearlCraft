@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow Next.js internal paths
+Disallow: /_next/
+Disallow: /api/
+Disallow: /private/
+Disallow: /admin/
+Disallow: /static/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+Sitemap: https://mypearlcraft.com/sitemap.xml

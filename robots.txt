@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+Disallow: /terms-condition
+Disallow: /privacy
+Disallow: /refund
+Disallow: /terms
+Disallow: /disclaimer
+Disallow: /pricing
+Disallow: /api/
+Disallow: /_next/
+Disallow: /.well-known/
+Disallow: /assets/images/
+Disallow: /*.pdf$
+Disallow: /*.json$
+Disallow: /*?trk=
+Disallow: /*?utm_
+Disallow: /*?ref=
+
+Sitemap: https://resumeocean.com/sitemap.xml
