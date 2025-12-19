@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
@@ -21,29 +20,23 @@ export default function ShopCategories({ items }) {
             className="w-64 bg-white border border-pink-300 rounded-xl shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl group cursor-pointer"
           >
             <div className="overflow-hidden rounded-t-xl">
-              <Image
+              <img
                 src={category.image}
                 alt={category.title}
-                width={256} // Matches w-64
-                height={160} // Approx for h-40
                 className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
             <div className="p-4">
-              <h5 className="text-lg font-semibold text-gray-800 mb-1">
-                {category.title}
-              </h5>
-              <p className="text-sm text-pink-600 font-bold">₹ {category.price}</p>
-              <button
-                type="button"
-                className="mt-4 inline-block bg-pink-600 text-white text-sm px-4 py-1.5 rounded hover:bg-pink-700 transition"
-              >
+              <h5 className="text-lg font-semibold text-gray-800 mb-1">{category.title}</h5>
+              <p className="text-sm text-pink-600 font-bold">{category.price}</p>
+              <button className="mt-4 inline-block bg-pink-600 text-white text-sm px-4 py-1.5 rounded hover:bg-pink-700 transition">
                 Explore
               </button>
             </div>
           </div>
         ))}
       </div>
+      
     </section>
   );
 }
