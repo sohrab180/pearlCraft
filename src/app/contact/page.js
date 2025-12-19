@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // app/contact/page.js
 'use client';
 
@@ -26,23 +25,6 @@ export default function ContactPage() {
       <div className="w-full h-full relative">
         <Image
           src="/contact.jpg" // Replace with your actual image path
-=======
-import Image from 'next/image';
-import ContactForm from '../../app/contact/ContactForm';
-
-export const metadata = {
-  title: "Contact Us - Mypearlcraft",
-  description: "Get in touch with Mypearlcraft for support, inquiries, and orders.",
-};
-
-export default function ContactPage() {
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch min-h-[80vh]">
-      {/* Image Side */}
-      <div className="relative w-full h-[400px] md:h-auto">
-        <Image
-          src="/contact.jpg" // ✅ Ensure this image exists in public/
->>>>>>> c6283a1 (update package.jso)
           alt="Contact Us"
           fill
           className="rounded-xl object-cover shadow-lg"
@@ -50,7 +32,6 @@ export default function ContactPage() {
       </div>
 
       {/* Form Side */}
-<<<<<<< HEAD
       <div className="bg-white p-8 rounded-xl shadow-md flex flex-col justify-center">
         <h1 className="text-3xl font-bold text-pink-700 mb-6">Get in Touch</h1>
         {submitted ? (
@@ -99,9 +80,6 @@ export default function ContactPage() {
           </form>
         )}
       </div>
-=======
-      <ContactForm />
->>>>>>> c6283a1 (update package.jso)
     </div>
   );
 }
